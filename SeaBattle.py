@@ -51,7 +51,7 @@ class Ship:
         self.shorient = shorient  # ship orientation
         self.shlives = shlength  # number of ship lives
 
-    # Dots- method, thant returns a list of all ship points
+# Dots- method, thant returns a list of all ship points
     @property
     def dots(self):
         ship_dots = []
@@ -59,10 +59,10 @@ class Ship:
             cur_x = self.shnose.x
             cur_y = self.shnose.y
 
-            if self.shorient == 0:  # Horizontally expands on X axis
+            if self.shorient == 0: 
                 cur_x += i
 
-            elif self.shorient == 1:  # Vertically expands on Y axis
+            elif self.shorient == 1:
                 cur_y += i
 
             ship_dots.append(Dot(cur_x, cur_y))  # Fill the list ship_dots
@@ -84,13 +84,13 @@ class Board:
 
         self.hid = hid
         self.size = size
-        self.count = 0
-        self.field = [['-'] * 6 for i in range(6)]
         self.ships = []
         self.busy = []
+        self.count = 0
+        self.field = [['-'] * 6 for i in range(6)]
 
-    # Method add_ship: adds the ship on class board and if it can not place then calls the
-    # exclusion
+
+    # Method add_ship: adds the ship on class board and if it can not place then calls the exclusion
     def add_ship(self, ship):
 
         for d in ship.dots:
